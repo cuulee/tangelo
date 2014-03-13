@@ -27,4 +27,8 @@ describe("isNumber()", function () {
         expect(tangelo.isNumber("345")).toBe(false);
         expect(tangelo.isNumber("three hundred forty five")).toBe(false);
     });
+
+    it("undefined is not a number", function () {
+        expect(tangelo.isNumber()).toBe(false);
+    });
 });
