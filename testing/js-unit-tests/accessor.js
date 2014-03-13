@@ -3,6 +3,7 @@
 describe("tangelo.accessor", function () {
     "use strict";
 
+    // Declare some common values.
     var data = {
         oranges: "tangelos",
         lemons: {
@@ -10,15 +11,26 @@ describe("tangelo.accessor", function () {
             fruit: "citrus"
         }
     },
-    undef1 = tangelo.accessor(),
-    undef2 = tangelo.accessor({}),
-    func = tangelo.accessor(function (x, y) {
-        return x + y;
-    }),
-    value = tangelo.accessor({value: 10}),
-    index = tangelo.accessor({index: true}),
-    field1 = tangelo.accessor({field: "oranges"}),
-    field2 = tangelo.accessor({field: "lemons.car"});
+        undef1,
+        undef2,
+        func,
+        value,
+        index,
+        field1,
+        field2;
+
+    // Construct the values in a test function (for coverage).
+    it("Construct some accessors", function () {
+        undef1 = tangelo.accessor();
+        undef2 = tangelo.accessor({});
+        func = tangelo.accessor(function (x, y) {
+            return x + y;
+        });
+        value = tangelo.accessor({value: 10});
+        index = tangelo.accessor({index: true});
+        field1 = tangelo.accessor({field: "oranges"});
+        field2 = tangelo.accessor({field: "lemons.car"});
+    });
 
     it("Undefined accessors display 'undefined' property", function () {
         expect(undef1.undefined).toBe(true);
