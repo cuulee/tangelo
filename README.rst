@@ -61,7 +61,8 @@ Acknowledgement
 Tangelo development is sponsored by the Air Force Research Laboratory and DARPA XDATA program.
 
 
-## License
+License
+=======
 Copyright 2016 EcoHealth Alliance
 
 Licensed under the Apache License, Version 2.0 (the "License");
